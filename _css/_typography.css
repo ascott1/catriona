@@ -1,0 +1,22 @@
+/* mobile first */
+.f1    {
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 48em) {
+  .f1    {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 64em) {
+  .f1   {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 64em)  {
+  .f1   {
+    font-size: 5rem;
+  }
+}
