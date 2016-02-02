@@ -6,12 +6,12 @@
 
 - Automagic browser reloading with browser-sync
 - CSS compiling with PostCSS
+- CSS minification
 
 ## TODO
 
 - Responsive boilerplate
 - Nice type defaults
-- CSS minification
 - Auto deploy to S3
 - Offline support with service workers
 - Favicons & touch icons

@@ -7,7 +7,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "browser-sync": "^2.11.1",
-    "node-minify": "^1.3.7",
+    "cssnano-cli": "^1.0.3",
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.14",
     "postcss-browser-reporter": "^0.4.0",
@@ -22,8 +22,11 @@
   },
   "scripts": {
     "clean": "rm -r _site/**",
-    "build:css": "postcss -c css.json --watch --verbose _/css/*.css",
+    "build": "npm run build:css && npm run && jekyll build && npm run minify:css",
+    "build:css": "postcss -c css.json --verbose _/css/*.css",
+    "watch:css": "postcss -c css.json --watch --verbose _/css/*.css",
+    "minify:css": "cssnano _site/css/style.css _site/css/style.css",
     "sync": "browser-sync start --proxy localhost:4000 --files _site/**",
-    "start": "parallelshell 'jekyll serve' 'npm run build:css'"
+    "start": "parallelshell 'jekyll serve' 'npm run watch:css'"
   }
 }
